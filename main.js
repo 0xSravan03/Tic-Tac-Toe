@@ -61,7 +61,6 @@ function checkWinner() {
         }
         if (cellA == cellB && cellB == cellC) {
             roundWon = true;
-            winnerIndex = i;
             break;
         }
     }
