@@ -13,6 +13,14 @@ body {
     font-weight: bold;
 }
 
+.playerone {
+    color: red;
+}
+
+.playertwo {
+    color: green;
+}
+
 #gameContainer {
     font-family: "Permanemt Marker", cursive;
     text-align: center;

@@ -15,6 +15,7 @@ const winConditions = [
 let options = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = 'X';
 let running = false;
+let playerOne = "playerone";
 
 initializeGame();
 
@@ -37,11 +38,12 @@ function cellClicked() {
 
 function updateCell(cell, index) {
     options[index] = currentPlayer;
-    cell.textContent = currentPlayer;
+    cell.innerHTML = `<span class="${playerOne}">${currentPlayer}<span>`;
 }
 
 function changePlayer() {
     currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+    playerOne = (playerOne == 'playerone') ? 'playertwo' : 'playerone';
     statusText.textContent = `${currentPlayer}'s Turn`;
 }
 
@@ -59,6 +61,7 @@ function checkWinner() {
         }
         if (cellA == cellB && cellB == cellC) {
             roundWon = true;
+            winnerIndex = i;
             break;
         }
     }
@@ -79,3 +82,4 @@ function checkWinner() {
 function restartGame() {
     window.location.reload();
 }
+
